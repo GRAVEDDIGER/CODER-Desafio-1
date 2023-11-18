@@ -14,11 +14,14 @@ class Product {
     if (Product.id === undefined) Product.id = 0;
   }
   addProduct(data: elements): void {
-    const newProduct: elements = { ...data, id: Product.id++ };
+    
     const encontrado = this.elements.findIndex(
-      (e) => e.code == newProduct.code
+      (e) => e.code == data.code
     );
-    if (encontrado != -1) this.elements.push(newProduct);
+    if (encontrado === -1) {
+        const newProduct: elements = { ...data, id: Product.id++ };
+        this.elements.push(newProduct);
+    }
     else console.log("Codigo ya existe");
   }
 }
