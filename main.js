@@ -13,6 +13,11 @@ class Products
         }
         else console.log("El codigo ya existe")
     }
+    getProductById(id)
+    {
+        const data=find(e=>e.id===id);
+        return data;
+    }
 }
 const datos=new Products();
 datos.addProduct("hola","ds",11,"e","eee",1);

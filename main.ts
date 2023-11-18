@@ -24,6 +24,10 @@ class Product {
     }
     else console.log("Codigo ya existe");
   }
+  getProductById(id:number):elements|undefined{
+    const data= this.elements.find(e => e.id == id);
+    return data;
+  }
 }
 
 const objeto = new Product();
